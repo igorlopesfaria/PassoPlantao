@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_onboarding"
+    app:startDestination="@id/onboarding_splash">
+
+    <fragment
+        android:id="@+id/onboarding_splash"
+        android:name="br.com.passoplantao.onboarding.splash.presentation.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/onboarding_splash_fragment">
+        <action
+            android:id="@+id/action_login"
+            app:destination="@id/onboarding_login"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/onboarding_login"
+        android:name="br.com.passoplantao.onboarding.login.presentation.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/onboarding_login_fragment"/>
+
+</navigation>

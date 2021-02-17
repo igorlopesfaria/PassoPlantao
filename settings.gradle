@@ -1,0 +1,6 @@
+include ':database'
+include ':core'
+include ':uitoolkit'
+include ':onboarding'
+include ':app'
+rootProject.name = "PassoPlantao"

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="br.com.passoplantao.onboarding.login.presentation.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/space_view_extra_big"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_login"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_view_medium"
+            android:layout_marginStart="@dimen/space_view_medium"
+            android:layout_marginEnd="@dimen/space_view_medium"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:onFocusChange="@{vm::onTargetFocusChanged}"
+                android:afterTextChanged="@{(editable) -> vm.emailChanged(editable.toString())}"
+                android:hint="@string/onboarding_email" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_view_medium"
+            android:layout_marginStart="@dimen/space_view_medium"
+            android:layout_marginEnd="@dimen/space_view_medium"
+            app:layout_constraintTop_toBottomOf="@+id/emailTextInputLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:onFocusChange="@{vm::onTargetFocusChanged}"
+                android:afterTextChanged="@{(editable) -> vm.passwordChanged(editable.toString())}"
+                android:hint="@string/onboarding_password" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <br.com.passoplantao.uitoolkit.button.LoaderButton
+            android:id="@+id/authenticationButton"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_custom_button"
+            style="@style/UIToolkit.Widget.Button"
+            android:onClick="@{_->vm.doAuthentication()}"
+            app:layout_constraintTop_toBottomOf="@+id/passwordTextInputLayout"
+            android:layout_marginStart="@dimen/space_view_medium"
+            android:layout_marginEnd="@dimen/space_view_medium"
+            android:layout_marginTop="@dimen/space_view_extra_big"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:uitoolkit_title="@string/onboarding_enter"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
