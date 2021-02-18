@@ -21,16 +21,21 @@
             android:src="@drawable/bg_login"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/emailTextInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_view_medium"
             android:layout_marginStart="@dimen/space_view_medium"
             android:layout_marginEnd="@dimen/space_view_medium"
+            app:boxBackgroundColor="@android:color/transparent"
+            android:background="@android:color/transparent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
@@ -47,6 +52,7 @@
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/passwordTextInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_view_medium"
@@ -70,8 +76,7 @@
         <br.com.passoplantao.uitoolkit.button.LoaderButton
             android:id="@+id/authenticationButton"
             android:layout_width="0dp"
-            android:layout_height="@dimen/height_custom_button"
-            style="@style/UIToolkit.Widget.Button"
+            android:layout_height="wrap_content"
             android:onClick="@{_->vm.doAuthentication()}"
             app:layout_constraintTop_toBottomOf="@+id/passwordTextInputLayout"
             android:layout_marginStart="@dimen/space_view_medium"
@@ -79,6 +84,8 @@
             android:layout_marginTop="@dimen/space_view_extra_big"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:uitoolkit_style="normal"
             app:uitoolkit_title="@string/onboarding_enter"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

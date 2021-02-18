@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+    android:background="@android:color/transparent"
+    android:layout_height="@dimen/height_custom_button">
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button"
-        style="@style/UIToolkit.Widget.Button"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,4 +24,4 @@
         app:layout_constraintStart_toStartOf="@id/button"
         app:layout_constraintTop_toTopOf="@id/button" />
 
-</merge>
+</androidx.constraintlayout.widget.ConstraintLayout>

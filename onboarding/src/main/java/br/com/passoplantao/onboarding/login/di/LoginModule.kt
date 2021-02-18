@@ -26,11 +26,6 @@ abstract class LoginModule {
     @ViewModelKey(LoginViewModel::class)
     abstract fun bindLoginViewModel(viewModel: LoginViewModel): ViewModel
 
-//    @Binds
-//    @IntoMap
-//    @ViewModelKey(SplashViewModel::class)
-//    abstract fun bindSplashViewModel(viewModel: SplashViewModel): ViewModel
-
     @Binds
     abstract fun bindLoginRepository(repository: LoginRepositoryImpl): LoginRepository
 

@@ -60,20 +60,20 @@ class LoaderButton @JvmOverloads constructor(
         return Style.values()[diamondStyle]
     }
 
-    fun applyStyle(style: Style) = when (style) {
+    private fun applyStyle(style: Style) = when (style) {
         Style.NORMAL -> {
         }
         Style.SECONDARY -> applySecondaryStyle()
     }
 
     private fun applySecondaryStyle() {
-        button.background = ContextCompat.getDrawable(context, R.drawable.background_button_primary)
-        button.setTextColor(ContextCompat.getColor(context, R.color.white))
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            progressBar.indeterminateDrawable.colorFilter = BlendModeColorFilter(ContextCompat.getColor(context, R.color.white), BlendMode.SRC_ATOP)
-        } else {
-            progressBar.indeterminateDrawable.setColorFilter(ContextCompat.getColor(context, R.color.white), PorterDuff.Mode.SRC_ATOP)
-        }
+//        button.background = ContextCompat.getDrawable(context, R.drawable.background_button_primary)
+//        button.setTextColor(ContextCompat.getColor(context, R.color.white))
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+//            progressBar.indeterminateDrawable.colorFilter = BlendModeColorFilter(ContextCompat.getColor(context, R.color.white), BlendMode.SRC_ATOP)
+//        } else {
+//            progressBar.indeterminateDrawable.setColorFilter(ContextCompat.getColor(context, R.color.white), PorterDuff.Mode.SRC_ATOP)
+//        }
     }
 
     fun setState(state: State) {

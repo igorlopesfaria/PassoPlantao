@@ -20,13 +20,13 @@
 
     <!--region Radius -->
     <dimen name="radius_bottom_sheet">22dp</dimen>
-    <dimen name="radius_button">22dp</dimen>
+    <dimen name="radius_button">17dp</dimen>
     <dimen name="radius_edittext">8dp</dimen>
     <dimen name="radius_placeholder">12dp</dimen>
     <!--endregion-->
 
     <!--region Height -->
-    <dimen name="height_custom_button">48dp</dimen>
+    <dimen name="height_custom_button">54dp</dimen>
     <dimen name="height_loader_button_progress_bar">16dp</dimen>
     <dimen name="height_elevation_progress_bar">16dp</dimen>
     <dimen name="height_toolbar_standard">56dp</dimen>
